@@ -1,0 +1,28 @@
+<template name="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-sm-push-2">
+        <div class="well well-sm">
+          {{#if isNotLoggedIn}}
+            <p class="lead text-center">To upload your photo, you must login first</p>
+            <p class="text-center">
+              <a href="{{pathFor 'login'}}" class="btn btn-primary">Login</a> and
+              <a href="{{pathFor 'login'}}" class="btn btn-success">Upload</a>
+            </p>
+          {{else}}
+
+            <p class="lead text-center">Select a photo to upload</p>
+            {{> upload_bootstrap fileTypes='image/*' callbacks=cropIt}}
+            <p class="lead text-center">Or drag and drop it</p>
+            {{> dropzone fileTypes='image/*' callbacks=cropeIt}}
+            {{#if myUpload}}
+              <hr>
+              <p class="lead text-center">Resize and publish</p>
+              <img src="{{myUpload.url}}" alt="{{myUpload.name}}" class="img-responsive" id="myUpload" />
+            {{/if}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

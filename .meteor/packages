@@ -5,5 +5,17 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
+standard-app-packages
+iron:router
+tomi:upload-server
+tomi:upload-jquery
+twbs:bootstrap
+useraccounts:bootstrap
+accounts-password
+accounts-facebook
+momentjs:moment
+accounts-ui
+fortawesome:fontawesome
+alanning:roles
+fastclick
+jonblum:jquery-cropper

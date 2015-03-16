@@ -1,0 +1,21 @@
+<template name="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-6 text-center">
+        <div class="well">
+          {{#if isNotLoggedIn}}
+            {{> atForm}}
+
+          {{else}}
+            <p class="lead text-center">Logged in as <strong>{{email}}</strong></p>
+            <button type="button" class="btn btn-danger" data-action="logout">
+              Logout
+            </button>
+          {{/if}}
+        </div>
+      </div>
+      <div class="col-xs-3"></div>
+    </div>
+  </div>
+</template>
